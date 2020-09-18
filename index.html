@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Spider Solitaire</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- CSS Files Link-->
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/cards.css">
+	</head>
+	<body>
+		<div class = "home-screen">
+
+			<button id="start-btn">
+				<label>Start Game</label>
+			</button>
+
+			<button id = "high-score-btn">High Score</button>
+			
+			<div id = "scoreBoard" class = "score-board">	
+				<h2>Score Board</h2>
+				Rank    <span style="float:right;">Number of Moves</span>
+				<ol id = "high-scores">
+				</ol>				
+				<div class="faq-close" title="close" onclick="dealer.closeScoreBoard()"></div>
+			</div>
+		</div>
+
+		<form action = "index.html" name = "startGame" id = "startGame" class = "start-form">
+			<div class="title">Choose a Difficulty Level</div>
+			<label class="game-option">
+				<input type="radio" name="radioBtn" value = "1" checked>
+				<span class="suit one">One suit</span>
+			</label>
+			<label class="game-option">
+				<input type="radio" name="radioBtn" value = "2">
+				<span class="suit two">Two suits</span>
+			</label>
+			<label class="game-option">
+				<input type="radio" name="radioBtn" value = "4">
+				<span class="suit four">Four suits</span>
+			</label>
+			<input type="submit" value="Play">
+		</form>
+
+
+		<div class="congratulation">
+			<canvas id="canvas">ttt</canvas>
+		</div>
+
+		<div class="wrapper">
+			<div class="timer">
+				<label>Time</label>
+				<label id="minutes">00</label>:<label id="seconds">00</label>
+			</div>
+			<div class="score">
+				<label>Moves: </label>
+				<label id="score">0</label>
+			</div>
+
+			<ul class="column" data-height=""></ul>
+			<ul class="column" data-height=""></ul>
+			<ul class="column" data-height=""></ul>
+			<ul class="column" data-height=""></ul>
+			<ul class="column" data-height=""></ul>
+			<ul class="column" data-height=""></ul>
+			<ul class="column" data-height=""></ul>
+			<ul class="column" data-height=""></ul>
+			<ul class="column" data-height=""></ul>
+			<ul class="column" data-height=""></ul>
+
+			<div class="offside">
+				<ul class="source" id="source"></ul>
+				<ul class="dropout" id="dropout"></ul>
+			</div>
+		</div>
+
+		<div class="control-panel opaque">
+			<button class="btn-hint">Hint</button>
+			<button class="btn-new">Restart Game</button>
+			<button class="btnFaq" onclick="dealer.showFaq()">FAQ</button>			
+		</div>
+
+	</body>
+</html>
